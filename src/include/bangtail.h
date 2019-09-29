@@ -1,0 +1,5 @@
+#include "../Engine.hpp"
+#include "../Sprite2D.hpp"
+#include "../Behavior.hpp"
+#include "../Collider.hpp"
+#include "../bangtail_std.h"
