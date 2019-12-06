@@ -1,6 +1,7 @@
 #include "test.hpp"
 
 void loadAssets();
+void addFrameColliders(GameObject *scene);
 
 int main(int argc, char *argv[])
 {
@@ -20,6 +21,7 @@ int main(int argc, char *argv[])
   MovementBehavior movement("movement_script");
 
   Scene main("main_scene");
+  addFrameColliders(&main);
   main.add(&fruits);
   main.add(&movement);
 
@@ -33,6 +35,14 @@ int main(int argc, char *argv[])
 void loadAssets()
 {
   Assets::loadTexture("fruits", "assets/fruits.png");
+}
+
+void addFrameColliders(GameObject *scene)
+{
+  Collider top("top_coll");
+  top.setSize(100, 30);
+
+  scene->add(&top);
 }
 
 void MovementBehavior::behaviorInit()
